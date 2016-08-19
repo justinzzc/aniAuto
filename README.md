@@ -104,8 +104,8 @@ A jquery plugin based on animate.css
 ###自动滚动 (attribute) ani-scroll  ani-scroll-offset
 
 ~~~ javascript
-<div class=" item  pulse"  ani-scroll ani-scroll-offset="-2%">
-      <p>trigger delay scroll offset </p>
+<div class=" ani-auto  zoomIn"  ani-scroll ani-scroll-offset="-2%">
+      <p>trigger scroll offset </p>
 </div>
 ~~~
 
