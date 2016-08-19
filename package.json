@@ -1,0 +1,24 @@
+{
+  "name": "aniAuto",
+  "version": "1.0.0",
+  "description": "ani-auto",
+  "main": "aniAuto.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinzzc/autoAni.git"
+  },
+  "keywords": [
+    "aniAuto",
+    "ani-auto",
+    "animate"
+  ],
+  "author": "zzc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justinzzc/autoAni/issues"
+  },
+  "homepage": "https://github.com/justinzzc/autoAni#readme"
+}
