@@ -19,10 +19,10 @@
             if ($item.attr('ani-duration')) {
                 duration = parseInt($item.attr('ani-duration'));
                 $item.css({
-                    'animation-duration': duration + 'ms',
-                    '-webkit-animation-duration': duration + 'ms',
-                    '-ms-animation-duration': duration + 'ms',
-                    '-woz-animation-duration': duration + 'ms'
+                    'animation-duration': duration ,
+                    '-webkit-animation-duration': duration ,
+                    '-ms-animation-duration': duration ,
+                    '-woz-animation-duration': duration 
                 });
             }
         //iteration
