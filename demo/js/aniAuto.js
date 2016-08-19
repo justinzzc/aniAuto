@@ -5,11 +5,16 @@
         var delay = 0, duration = null;
         var $item = $(item);
 
-        //must hide dom at the beginning
-        //$item.hide();
+        //init hide
+        var  initHide=(undefined != $item.attr('ani-init-hide'));
+        if(initHide){
+            $item.hide();
+        }
 
         function runItemAni() {
-            //$item.show();
+            if(initHide){
+                $item.show();
+            }
 
             //delay
             if ($item.attr('ani-delay')) {

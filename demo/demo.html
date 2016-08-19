@@ -27,22 +27,27 @@
             <div id="item_2" class="ani-auto item flipInX" ani-trigger="#item_1">
                 trigger
             </div>
+
             <div id="item_3" class="ani-auto item rotateIn" ani-duration="2s" ani-trigger="#item_2">
                 trigger duration
             </div>
+
             <div id="item_4" class="ani-auto item swing"  ani-delay="1s" ani-trigger="#item_3">
                 trigger delay
             </div>
 
+            <div id="item_5" class="ani-auto item bounceIn" ani-init-hide ani-trigger="#item_4">
+                trigger hide
+            </div>
         </div>
 
-
-        <div class="demo  ani-auto zoomIn" style="margin-top: 100px;margin-bottom: 400px;" ani-scroll ani-scroll-offset="-20" ani-delay=".5s"
-             ani-trigger="#item_4">
-            <h2>Scroll To Me!</h2>
-
-            <div id="item_5" class="item " >
-                <p>trigger delay scroll offset </p>
+        <div class="demo  ani-auto zoomIn"
+             style="margin-top: 100px;margin-bottom: 400px;"
+             ani-scroll
+             ani-scroll-offset="-20"
+             ani-trigger="#item_5">
+            <div id="item_6" class="item " >
+                <p>trigger scroll offset </p>
             </div>
         </div>
 
