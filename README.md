@@ -42,10 +42,24 @@ A jquery plugin based on animate.css
 ##配置项
 
 + 可用配置项
+ - 初始隐藏 (attribute) ani-init-hide
  - 延迟 (attribute) ani-delay
  - 持续时长 (attribute) ani-duration
  - 触发元素 (attribute) ani-trigger
  - 自动滚动 (attribute) ani-scroll  ani-scroll-offset
+ 
+ 
+###初始隐藏 (attribute) ani-init-hide
+
+~~~ javascript
+<div class="ani-auto  tada" ani-init-hide>
+            hide
+</div>
+~~~ 
+
+> 添加`ani-init-hide` 属性后初始会隐藏,动画开始的时候出现
+ 
+ 
  
  
 ###延迟 (attribute) ani-delay
@@ -69,6 +83,8 @@ A jquery plugin based on animate.css
 
 > `ani-duration`:参考[animation-duration的值](http://www.w3school.com.cn/cssref/pr_animation-duration.asp)
 
+
+
 ###触发元素 (attribute) ani-trigger
 
 ~~~ javascript
@@ -82,6 +98,7 @@ A jquery plugin based on animate.css
 ~~~
 
 > `ani-trigger`:参考[jquery选择器](http://www.w3school.com.cn/jquery/jquery_ref_selectors.asp)
+
 
 
 ###自动滚动 (attribute) ani-scroll  ani-scroll-offset
