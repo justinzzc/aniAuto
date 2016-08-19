@@ -1,90 +1,15 @@
 (function ($) {
 
-    var aniNames = [
-        "bounce",
-        "flash",
-        "pulse",
-        "rubberBand",
-        "shake",
-        "headShake",
-        "swing",
-        "tada",
-        "wobble",
-        "jello",
-        "bounceIn",
-        "bounceInDown",
-        "bounceInLeft",
-        "bounceInRight",
-        "bounceInUp",
-        "bounceOut",
-        "bounceOutDown",
-        "bounceOutLeft",
-        "bounceOutRight",
-        "bounceOutUp",
-        "fadeIn",
-        "fadeInDown",
-        "fadeInDownBig",
-        "fadeInLeft",
-        "fadeInLeftBig",
-        "fadeInRight",
-        "fadeInRightBig",
-        "fadeInUp",
-        "fadeInUpBig",
-        "fadeOut",
-        "fadeOutDown",
-        "fadeOutDownBig",
-        "fadeOutLeft",
-        "fadeOutLeftBig",
-        "fadeOutRight",
-        "fadeOutRightBig",
-        "fadeOutUp",
-        "fadeOutUpBig",
-        "flipInX",
-        "flipInY",
-        "flipOutX",
-        "flipOutY",
-        "lightSpeedIn",
-        "lightSpeedOut",
-        "rotateIn",
-        "rotateInDownLeft",
-        "rotateInDownRight",
-        "rotateInUpLeft",
-        "rotateInUpRight",
-        "rotateOut",
-        "rotateOutDownLeft",
-        "rotateOutDownRight",
-        "rotateOutUpLeft",
-        "rotateOutUpRight",
-        "hinge",
-        "rollIn",
-        "rollOut",
-        "zoomIn",
-        "zoomInDown",
-        "zoomInLeft",
-        "zoomInRight",
-        "zoomInUp",
-        "zoomOut",
-        "zoomOutDown",
-        "zoomOutLeft",
-        "zoomOutRight",
-        "zoomOutUp",
-        "slideInDown",
-        "slideInLeft",
-        "slideInRight",
-        "slideInUp",
-        "slideOutDown",
-        "slideOutLeft",
-        "slideOutRight",
-        "slideOutUp",
-    ];
 
     function autoAni(item) {
         var delay = 0, duration = null;
         var $item = $(item);
-        $item.hide();
+
+        //must hide dom at the beginning
+        //$item.hide();
 
         function runItemAni() {
-            $item.show();
+            //$item.show();
 
             //delay
             if ($item.attr('ani-delay')) {
@@ -117,9 +42,15 @@
                 });
             }
 
-            $item.addClass('animated');
-
             $item.removeClass('ani-auto');
+
+            //restart trigger the animation
+            $item.css('animation-name','this_is_an_unavailable_animation_name_to_trigger_animate_refresh');
+            setTimeout(function(){
+                $item.addClass('animated');
+                $item.css('animation-name','');
+            },1);
+
 
 
             //scroll
@@ -149,24 +80,20 @@
 
                 var top = $item.offset().top + offset;
 
-
-                $('body,html').animate({scrollTop: top}, delay || 1000);
-
+                $('body,html').animate({scrollTop: top});
                 //console.log('[' + $item.attr('id') + ']==>top:' + top);
             }
 
         }
 
         //trigger
-        if ($item.attr('ani-trigger')) {
+        if ( $item.attr('ani-trigger')) {
             var triggerSelector = $item.attr('ani-trigger');
-            $(triggerSelector).
-                one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
-                function () {
-                    if (!$item.hasClass('animated')) {
-                        runItemAni();
-                    }
-                });
+            $(triggerSelector).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function (e) {
+                if ($(e.currentTarget).hasClass('animated')) {
+                    runItemAni();
+                }
+            });
         } else {
             runItemAni();
         }
@@ -180,8 +107,6 @@
         var autoAniItems = $('.ani-auto', dom && $(dom));
         $.each(autoAniItems, function (index, item) {
             autoAni(item);
-
-
         });
     }
 

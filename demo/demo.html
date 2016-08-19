@@ -10,10 +10,11 @@
     <script src="js/jquery-1.12.3.min.js"></script>
     <script src="js/aniAuto.js"></script>
 
+
 </head>
 
 <body>
-<div class="slideInUp ">
+<div class="slideInUp animated">
 
     <h1 class="title ">Auto Ani Demo</h1>
 
@@ -26,25 +27,21 @@
             <div id="item_2" class="ani-auto item flipInX" ani-trigger="#item_1">
                 trigger
             </div>
-            <div id="item_3" class="ani-auto item swing" ani-duration="2s" ani-trigger="#item_2">
+            <div id="item_3" class="ani-auto item rotateIn" ani-duration="2s" ani-trigger="#item_2">
                 trigger duration
             </div>
-            <div id="item_4" class="ani-auto item swing" ani-delay="1s" ani-trigger="#item_3">
+            <div id="item_4" class="ani-auto item swing"  ani-delay="1s" ani-trigger="#item_3">
                 trigger delay
             </div>
+
         </div>
 
-        <div class="demo">
-            <div id="item_5" class="ani-auto item  slideInDown" ani-scroll ani-trigger="#item_4">
-                trigger scroll
-            </div>
-        </div>
 
-        <div class="demo ani-auto " style="margin-top: 300px;" ani-scroll ani-scroll-offset="-2%" ani-delay="3s"
-             ani-trigger="#item_5">
+        <div class="demo  ani-auto zoomIn" style="margin-top: 100px;margin-bottom: 400px;" ani-scroll ani-scroll-offset="-20" ani-delay=".5s"
+             ani-trigger="#item_4">
             <h2>Scroll To Me!</h2>
 
-            <div id="item_6" class=" item  pulse" >
+            <div id="item_5" class="item " >
                 <p>trigger delay scroll offset </p>
             </div>
         </div>

@@ -38,3 +38,12 @@
     display: inline-block;
 }
 
+
+#item_7{
+    display: none;
+
+}
+
+#item_7.animated{
+    display: inline-block;
+}
