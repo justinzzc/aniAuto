@@ -85,6 +85,18 @@ A jquery plugin based on animate.css
 
 
 
+###持续时长 (attribute) ani-iteration
+
+~~~ javascript
+<div class="ani-auto  wobble" ani-iteration="5">
+            iteration
+</div>
+~~~
+
+> `ani-duration`:参考[animation-iteration的值](http://www.w3school.com.cn/cssref/pr_animation-iteration.asp)
+
+
+
 ###触发元素 (attribute) ani-trigger
 
 ~~~ javascript

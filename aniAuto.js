@@ -86,7 +86,7 @@
                 var top = $item.offset().top + offset;
 
                 $('body,html').animate({scrollTop: top});
-                //console.log('[' + $item.attr('id') + ']==>top:' + top);
+                console.log('[' + $item.attr('id') + ']==>top:' + top);
             }
 
         }
