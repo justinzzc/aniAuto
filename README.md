@@ -56,6 +56,9 @@ A jquery plugin based on animate.css
 </div>
 ~~~
 
+> `ani-delay`:参考[animation-delay的值](http://www.w3school.com.cn/cssref/pr_animation-delay.asp)
+
+
 ###持续时长 (attribute) ani-duration
 
 ~~~ javascript
@@ -63,6 +66,8 @@ A jquery plugin based on animate.css
             duration
 </div>
 ~~~
+
+> `ani-duration`:参考[animation-duration的值](http://www.w3school.com.cn/cssref/pr_animation-duration.asp)
 
 ###触发元素 (attribute) ani-trigger
 
@@ -76,6 +81,9 @@ A jquery plugin based on animate.css
 </div>
 ~~~
 
+> `ani-trigger`:参考[jquery选择器](http://www.w3school.com.cn/jquery/jquery_ref_selectors.asp)
+
+
 ###自动滚动 (attribute) ani-scroll  ani-scroll-offset
 
 ~~~ javascript
@@ -84,22 +92,10 @@ A jquery plugin based on animate.css
 </div>
 ~~~
 
+> `ani-scroll-offset` 值:
+  + 数值,如:-100   ==> 100px
+  + 百分比,如:-2%   ==> -2% * $('body').height()
+
 
 
 详细请查看 [demo页面](./demo/demo.html)
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-

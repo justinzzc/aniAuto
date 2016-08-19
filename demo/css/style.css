@@ -38,12 +38,3 @@
     display: inline-block;
 }
 
-.ani-auto {
-    display: none;
-
-}
-
-.ani-auto.animated {
-    display: inline-block;
-
-}

@@ -3,8 +3,11 @@
     function autoAni(item) {
         var delay = 0, duration = null;
         var $item = $(item);
+        $item.hide();
 
         function runItemAni() {
+            $item.show();
+
             //delay
             if ($item.attr('ani-delay')) {
                 delay = $item.attr('ani-delay');
