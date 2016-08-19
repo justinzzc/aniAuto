@@ -1,0 +1,49 @@
+
+
+.title {
+    text-align: center;
+}
+
+.demos {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.demo {
+    padding: 30px;
+    margin: 20px 0;
+}
+
+.item {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background: purple;
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+    text-align: center;
+    color: white;
+    line-height: 200px;
+    font-size: 20px;
+    font-weight: bold;
+
+
+}
+
+.item p {
+    line-height: 1.8;
+    display: inline-block;
+}
+
+.ani-auto {
+    display: none;
+
+}
+
+.ani-auto.animated {
+    display: inline-block;
+
+}

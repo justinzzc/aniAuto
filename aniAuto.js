@@ -7,17 +7,17 @@
         function runItemAni() {
         //delay
             if ($item.attr('ani-delay')) {
-                delay = parseInt($item.attr('ani-delay'));
+                delay = $item.attr('ani-delay');
                 $item.css({
-                    'animation-delay': delay + 'ms',
-                    '-webkit-animation-delay': delay + 'ms',
-                    '-ms-animation-delay': delay + 'ms',
-                    '-woz-animation-delay': delay + 'ms'
+                    'animation-delay': delay ,
+                    '-webkit-animation-delay': delay ,
+                    '-ms-animation-delay': delay ,
+                    '-woz-animation-delay': delay
                 });
             }
         //duration
             if ($item.attr('ani-duration')) {
-                duration = parseInt($item.attr('ani-duration'));
+                duration = $item.attr('ani-duration');
                 $item.css({
                     'animation-duration': duration ,
                     '-webkit-animation-duration': duration ,
@@ -89,7 +89,7 @@
     
     //api
     
-    $.autoAni=function (dom){
+    $.aniAuto=function (dom){
       var autoAniItems = $('.ani-auto',dom && $(dom));
       $.each(autoAniItems, function (index, item) {
           autoAni(item);
