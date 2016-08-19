@@ -1,3 +1,13 @@
+/**
+ * create by zzc 2016-08-19
+ *
+ * JQuery Plugin [ aniAuto ]
+ * A jquery plugin based on animate.css
+ *
+ * Repository:   https://github.com/justinzzc/aniAuto.git
+ *
+ */
+
 (function ($) {
 
 
@@ -5,7 +15,7 @@
         var delay = 0, duration = null;
         var $item = $(item);
 
-        //init hide
+       /*init hide*/
         var  initHide=(undefined != $item.attr('ani-init-hide'));
         if(initHide){
             $item.hide();
@@ -16,7 +26,7 @@
                 $item.show();
             }
 
-            //delay
+            /*delay*/
             if ($item.attr('ani-delay')) {
                 delay = $item.attr('ani-delay');
                 $item.css({
@@ -26,7 +36,7 @@
                     '-woz-animation-delay': delay
                 });
             }
-            //duration
+            /*duration*/
             if ($item.attr('ani-duration')) {
                 duration = $item.attr('ani-duration');
                 $item.css({
@@ -36,7 +46,7 @@
                     '-woz-animation-duration': duration
                 });
             }
-            //iteration
+            /*iteration*/
             if ($item.attr('ani-iteration')) {
                 var iterationCount = $item.attr('ani-iteration');
                 $item.css({
@@ -49,7 +59,7 @@
 
             $item.removeClass('ani-auto');
 
-            //restart trigger the animation
+            /*restart trigger the animation*/
             $item.css('animation-name','this_is_an_unavailable_animation_name_to_trigger_animate_refresh');
             setTimeout(function(){
                 $item.addClass('animated');
@@ -58,7 +68,7 @@
 
 
 
-            //scroll
+            /*scroll*/
             if (undefined != $item.attr('ani-scroll')) {
                 var offset = $item.attr('ani-scroll-offset');
 
@@ -86,7 +96,6 @@
                     if ($(e.currentTarget).hasClass('animated')) {
                         var top = $item.offset().top + offset;
                         $('body,html').animate({scrollTop: top});
-                        console.log('[' + $item.attr('id') + ']==>top:' + top);
                     }
                 });
 
@@ -94,7 +103,7 @@
 
         }
 
-        //trigger
+        /*trigger*/
         if ( $item.attr('ani-trigger')) {
             var triggerSelector = $item.attr('ani-trigger');
             $(triggerSelector).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function (e) {
@@ -106,11 +115,13 @@
             runItemAni();
         }
 
-        //console.log('[' + $item.attr('id') + ']==>delay:' + delay);
     }
 
-    //api
+    /*api*/
 
+    /**
+     * @param dom parentDom 范围容器节点
+     */
     $.aniAuto = function (dom) {
         var autoAniItems = $('.ani-auto', dom && $(dom));
         $.each(autoAniItems, function (index, item) {

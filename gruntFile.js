@@ -3,7 +3,9 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
-            options: {},
+            options: {
+                preserveComments:'some'
+            },
             dist: {
                 files: {
                     'dist/aniAuto.min.js': 'aniAuto.js'
