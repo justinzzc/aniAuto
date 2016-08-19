@@ -82,11 +82,14 @@
                     offset = 0;
                 }
 
+                $item.one('webkitAnimationStart mozAnimationStart MSAnimationStart oanimationStart animationStart', function (e) {
+                    if ($(e.currentTarget).hasClass('animated')) {
+                        var top = $item.offset().top + offset;
+                        $('body,html').animate({scrollTop: top});
+                        console.log('[' + $item.attr('id') + ']==>top:' + top);
+                    }
+                });
 
-                var top = $item.offset().top + offset;
-
-                $('body,html').animate({scrollTop: top});
-                console.log('[' + $item.attr('id') + ']==>top:' + top);
             }
 
         }
