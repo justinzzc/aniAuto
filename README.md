@@ -45,6 +45,7 @@ A jquery plugin based on animate.css
  - 初始隐藏 (attribute) ani-init-hide
  - 延迟 (attribute) ani-delay
  - 持续时长 (attribute) ani-duration
+ - 重复次数 (attribute) ani-iteration
  - 触发元素 (attribute) ani-trigger
  - 自动滚动 (attribute) ani-scroll  ani-scroll-offset
  
@@ -85,7 +86,7 @@ A jquery plugin based on animate.css
 
 
 
-###持续时长 (attribute) ani-iteration
+###重复次数 (attribute) ani-iteration
 
 ~~~ javascript
 <div class="ani-auto  wobble" ani-iteration="5">
