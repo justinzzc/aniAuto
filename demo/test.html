@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小丽子的独家动画</title>
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/aniAuto.min.js"></script>
+    <style>
+
+        html,body
+        {
+            height: 100%;
+        }
+        h1
+        {
+            text-align: center;
+            color:#E67E22;
+        }
+        .con-ter
+        {
+            height: 100%;
+
+        }
+        .list-li{
+            width: 1000px;
+            margin: auto;
+            list-style: none;
+        }
+        .list-li li{
+            width: 300px;
+            float: left;
+            margin-left: 30px;
+            height:400px;
+        }
+        .list-li li img
+        {
+            height: 100%;
+        }
+        .clear
+        {
+            clear: both;
+        }
+        .lt
+        {
+
+          margin:30px auto 20px auto;
+            text-align: center;
+        }
+        .sil-btn
+        {
+            border: none;
+            background: #E67E22;
+            width: 200px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 9px;
+            color:#ffffff;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body >
+<div class=" con-ter slideInUp animated">
+    <h1 class="bounceIn ani-auto" ani-delay="1s" ani-duration="2s">晨哥哥,快点给我买新裙子!</h1>
+    <div>
+        <ul class="list-li">
+            <li class="zoomInLeft ani-auto" ani-delay="2s"  ani-duration="1s"><img src="img/2016081714500329.jpg" /></li>
+            <li class="zoomInUp ani-auto" ani-delay="3s" ani-duration="1s"><img src="img/2016081714500390.jpg"></li>
+            <li class="zoomInRight ani-auto" ani-delay="4s" ani-duration="1s"><img src="img/2016081714500391.jpg"/></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="lt">
+        <button class="sil-btn">立即购买</button>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+
+        $.aniAuto();
+
+    });
+</script>
+</body>
+</html>
