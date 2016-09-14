@@ -1,7 +1,7 @@
 # aniAuto
 
 A jquery plugin based on animate.css 
-一个基于 [animate.css](http://daneden.github.io/animate.css/) 的jquery插件
+一个基于 [animate.css](https://github.com/daneden/animate.css) 的jquery插件
 
 > 只需添加一些标签属性和一行js脚本就可以组合出复杂的动画效果.
 > [https://justinzzc.github.io/aniAuto/](https://justinzzc.github.io/aniAuto/)
@@ -47,6 +47,7 @@ A jquery plugin based on animate.css
  - 初始隐藏 (attribute) ani-init-hide
  - 延迟 (attribute) ani-delay
  - 持续时长 (attribute) ani-duration
+ - 重复次数 (attribute) ani-iteration
  - 触发元素 (attribute) ani-trigger
  - 自动滚动 (attribute) ani-scroll  ani-scroll-offset
  
@@ -87,7 +88,7 @@ A jquery plugin based on animate.css
 
 
 
-###持续时长 (attribute) ani-iteration
+###重复次数 (attribute) ani-iteration
 
 ~~~ javascript
 <div class="ani-auto  wobble" ani-iteration="5">
