@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Aniauto by justinzzc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Aniauto</h1>
+      <h2 class="project-tagline">A jquery plugin based on animate.css </h2>
+      <a href="https://github.com/justinzzc/aniAuto" class="btn">View on GitHub</a>
+      <a href="https://github.com/justinzzc/aniAuto/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/justinzzc/aniAuto/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="aniauto" class="anchor" href="#aniauto" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>aniAuto</h1>
+
+<p>A jquery plugin based on animate.css 
+一个基于 <a href="https://github.com/daneden/animate.css">animate.css</a> 的jquery插件</p>
+
+<blockquote>
+<p>只需添加一些标签属性和一行js脚本就可以组合出复杂的动画效果.</p>
+</blockquote>
+
+<h2>
+<a id="用法" class="anchor" href="#%E7%94%A8%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>用法</h2>
+
+<h3>
+<a id="基本使用方法" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>基本使用方法</h3>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">head</span>&gt;
+    &lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>css/animate.css<span class="pl-pds">"</span></span>&gt;
+
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/jquery-1.12.3.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/aniAuto.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+&lt;/<span class="pl-ent">head</span>&gt;
+
+&lt;<span class="pl-ent">body</span>&gt;
+...
+
+ &lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>item_1<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>ani-auto item tada<span class="pl-pds">"</span></span> &gt;
+            demo item
+ &lt;/<span class="pl-ent">div</span>&gt;
+...
+
+<span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">    <span class="pl-en">$</span>(<span class="pl-c1">document</span>).<span class="pl-en">ready</span>(<span class="pl-k">function</span> () {</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">        <span class="pl-smi">$</span>.<span class="pl-en">aniAuto</span>();</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    });</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span>
+&lt;/<span class="pl-ent">body</span>&gt;
+</pre></div>
+
+<blockquote>
+<p>将需要配置自动动画的dom节点配置class类 <code>ani-auto</code> .</p>
+</blockquote>
+
+<h2>
+<a id="配置项" class="anchor" href="#%E9%85%8D%E7%BD%AE%E9%A1%B9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>配置项</h2>
+
+<ul>
+<li>可用配置项
+
+<ul>
+<li>初始隐藏 (attribute) ani-init-hide</li>
+<li>延迟 (attribute) ani-delay</li>
+<li>持续时长 (attribute) ani-duration</li>
+<li>重复次数 (attribute) ani-iteration</li>
+<li>触发元素 (attribute) ani-trigger</li>
+<li>自动滚动 (attribute) ani-scroll  ani-scroll-offset</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<a id="初始隐藏-attribute-ani-init-hide" class="anchor" href="#%E5%88%9D%E5%A7%8B%E9%9A%90%E8%97%8F-attribute-ani-init-hide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>初始隐藏 (attribute) ani-init-hide</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>div <span class="pl-k">class</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>ani-auto  tada<span class="pl-pds">"</span></span> ani<span class="pl-k">-</span>init<span class="pl-k">-</span>hide<span class="pl-k">&gt;</span>
+            hide
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>div<span class="pl-k">&gt;</span></pre></div>
+
+<blockquote>
+<p>添加<code>ani-init-hide</code> 属性后初始会隐藏,动画开始的时候出现</p>
+</blockquote>
+
+<h3>
+<a id="延迟-attribute-ani-delay" class="anchor" href="#%E5%BB%B6%E8%BF%9F-attribute-ani-delay" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>延迟 (attribute) ani-delay</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>div <span class="pl-k">class</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>ani-auto  tada<span class="pl-pds">"</span></span> ani<span class="pl-k">-</span>delay<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>1s<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+            delay
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>div<span class="pl-k">&gt;</span></pre></div>
+
+<blockquote>
+<p><code>ani-delay</code>:参考<a href="http://www.w3school.com.cn/cssref/pr_animation-delay.asp">animation-delay的值</a></p>
+</blockquote>
+
+<h3>
+<a id="持续时长-attribute-ani-duration" class="anchor" href="#%E6%8C%81%E7%BB%AD%E6%97%B6%E9%95%BF-attribute-ani-duration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>持续时长 (attribute) ani-duration</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>div <span class="pl-k">class</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>ani-auto  tada<span class="pl-pds">"</span></span> ani<span class="pl-k">-</span>duration<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>1s<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+            duration
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>div<span class="pl-k">&gt;</span></pre></div>
+
+<blockquote>
+<p><code>ani-duration</code>:参考<a href="http://www.w3school.com.cn/cssref/pr_animation-duration.asp">animation-duration的值</a></p>
+</blockquote>
+
+<h3>
+<a id="重复次数-attribute-ani-iteration" class="anchor" href="#%E9%87%8D%E5%A4%8D%E6%AC%A1%E6%95%B0-attribute-ani-iteration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>重复次数 (attribute) ani-iteration</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>div <span class="pl-k">class</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>ani-auto  wobble<span class="pl-pds">"</span></span> ani<span class="pl-k">-</span>iteration<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>5<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+            iteration
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>div<span class="pl-k">&gt;</span></pre></div>
+
+<blockquote>
+<p><code>ani-duration</code>:参考<a href="http://www.w3school.com.cn/cssref/pr_animation-iteration.asp">animation-iteration的值</a></p>
+</blockquote>
+
+<h3>
+<a id="触发元素-attribute-ani-trigger" class="anchor" href="#%E8%A7%A6%E5%8F%91%E5%85%83%E7%B4%A0-attribute-ani-trigger" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>触发元素 (attribute) ani-trigger</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>div id<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>item_1<span class="pl-pds">"</span></span> <span class="pl-k">class</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>ani-auto  tada<span class="pl-pds">"</span></span> <span class="pl-k">&gt;</span>
+ delay
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>div<span class="pl-k">&gt;</span>
+
+<span class="pl-k">&lt;</span>div id<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>item_2<span class="pl-pds">"</span></span> <span class="pl-k">class</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>ani-auto  flipInX<span class="pl-pds">"</span></span> ani<span class="pl-k">-</span>trigger<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>#item_1<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+ trigger
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>div<span class="pl-k">&gt;</span></pre></div>
+
+<blockquote>
+<p><code>ani-trigger</code>:参考<a href="http://www.w3school.com.cn/jquery/jquery_ref_selectors.asp">jquery选择器</a></p>
+</blockquote>
+
+<h3>
+<a id="自动滚动-attribute-ani-scroll--ani-scroll-offset" class="anchor" href="#%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%8A%A8-attribute-ani-scroll--ani-scroll-offset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>自动滚动 (attribute) ani-scroll  ani-scroll-offset</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>div <span class="pl-k">class</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span> ani-auto  zoomIn<span class="pl-pds">"</span></span>  ani<span class="pl-k">-</span>scroll ani<span class="pl-k">-</span>scroll<span class="pl-k">-</span>offset<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>-2%<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+      <span class="pl-k">&lt;</span>p<span class="pl-k">&gt;</span>trigger scroll offset <span class="pl-k">&lt;</span><span class="pl-k">/</span>p<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>div<span class="pl-k">&gt;</span></pre></div>
+
+<blockquote>
+<p><code>ani-scroll-offset</code> 值:</p>
+
+<ul>
+<li>数值,如:-100   ==&gt; 100px</li>
+<li>百分比,如:-2%   ==&gt; -2% * $('body').height()</li>
+</ul>
+</blockquote>
+
+<p>详细请查看 <a href="./demo/demo.html">demo页面</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/justinzzc/aniAuto">Aniauto</a> is maintained by <a href="https://github.com/justinzzc">justinzzc</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
