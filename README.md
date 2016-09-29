@@ -130,4 +130,11 @@ A jquery plugin based on animate.css
 
 
 
-详细请查看 [demo页面](./demo/demo.html)
+###详细请查看 
+
+[demo页面](./demo/demo.html)
+
+
+###捐赠donate
+
+![](https://justinzzc.github.io/imgs/donate.jpg)
