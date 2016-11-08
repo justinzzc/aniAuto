@@ -11,18 +11,18 @@
 (function ($) {
 
 
-    function autoAni(item) {
+    function autoAni(item, options) {
         var delay = 0, duration = null;
         var $item = $(item);
 
-       /*init hide*/
-        var  initHide=(undefined != $item.attr('ani-init-hide'));
-        if(initHide){
+        /*init hide*/
+        var initHide = (undefined != $item.attr('ani-init-hide'));
+        if (initHide) {
             $item.hide();
         }
 
         function runItemAni() {
-            if(initHide){
+            if (initHide) {
                 $item.show();
             }
 
@@ -60,12 +60,11 @@
             $item.removeClass('ani-auto');
 
             /*restart trigger the animation*/
-            $item.css('animation-name','this_is_an_unavailable_animation_name_to_trigger_animate_refresh');
-            setTimeout(function(){
+            $item.css('animation-name', 'this_is_an_unavailable_animation_name_to_trigger_animate_refresh');
+            setTimeout(function () {
                 $item.addClass('animated');
-                $item.css('animation-name','');
-            },1);
-
+                $item.css('animation-name', '');
+            }, 1);
 
 
             /*scroll*/
@@ -101,13 +100,32 @@
 
             }
 
+
+            if (undefined != $item.attr('ani-start')) {
+                var host = (options && options.methods) || window,
+                    mName = $item.attr('ani-start');
+                $item.one('webkitAnimationStart mozAnimationStart MSAnimationStart oanimationStart animationStart', function (e) {
+                    var method = host[mName];
+                    method && method($(this));
+                });
+            }
+
+            if (undefined != $item.attr('ani-end')) {
+                var host = (options && options.methods) || window,
+                    mName = $item.attr('ani-end');
+                $item.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function (e) {
+                    var method = host[mName];
+                    method && method($(this));
+                });
+            }
+
         }
 
         /*trigger*/
-        if ( $item.attr('ani-trigger')) {
+        if ($item.attr('ani-trigger')) {
             var triggerSelector = $item.attr('ani-trigger');
-            $(triggerSelector).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function (e) {
-                if ($(e.currentTarget).hasClass('animated')) {
+            $(triggerSelector).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function (e) {
+                if (!$item.hasClass('animated') && $(e.currentTarget).hasClass('animated')) {
                     runItemAni();
                 }
             });
@@ -122,10 +140,10 @@
     /**
      * @param dom parentDom 范围容器节点
      */
-    $.aniAuto = function (dom) {
+    $.aniAuto = function (dom, options) {
         var autoAniItems = $('.ani-auto', dom && $(dom));
         $.each(autoAniItems, function (index, item) {
-            autoAni(item);
+            autoAni(item, options);
         });
     }
 

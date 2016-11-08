@@ -50,6 +50,7 @@ A jquery plugin based on animate.css
  - 重复次数 (attribute) ani-iteration
  - 触发元素 (attribute) ani-trigger
  - 自动滚动 (attribute) ani-scroll  ani-scroll-offset
+ - 动画事件回调 (attribute) ani-start  ani-end
  
  
 ###初始隐藏 (attribute) ani-init-hide
@@ -127,6 +128,39 @@ A jquery plugin based on animate.css
 > `ani-scroll-offset` 值:
   + 数值,如:-100   ==> 100px
   + 百分比,如:-2%   ==> -2% * $('body').height()
+
+###动画事件回调 (attribute) ani-start  ani-end
+
+~~~ html
+<div class=" ani-auto  zoomIn" ani-start="zoomStart" ani-end="zoomEnd">
+      <p>trigger scroll offset </p>
+</div>
+~~~
+~~~ javascript
+  //第一种方式
+ $.aniAuto(document,{
+    methods:{
+        zoomStart:function (){
+        console.log('zoomStart');
+        },
+        zoomEnd:function (){
+        console.log('zoomStart');
+        }
+    }
+ });
+ 
+ //第二种方式
+    window.zoomStart= function (){
+        console.log('zoomStart');
+    };
+    
+    window.zoomEnd=function (){
+        console.log('zoomStart');
+    }
+~~~
+
+> `ani-start` 值:
+  + 方法名,function
 
 
 
