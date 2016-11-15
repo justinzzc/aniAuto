@@ -10,8 +10,21 @@
 
 (function ($) {
 
+    function isNode(item) {
+        if (item.nodeType || typeof  item.length != 'undefined') {
+            return true;
+        }
+        return false;
+    }
 
     function autoAni(item, options) {
+
+        if (item) {
+            if (!isNode(item)) {
+                options = item;
+            }
+        }
+
         var delay = 0, duration = null;
         var $item = $(item);
 
