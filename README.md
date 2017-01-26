@@ -6,6 +6,11 @@ A jquery plugin based on animate.css
 > 只需添加一些标签属性和一行js脚本就可以组合出复杂的动画效果.
 > [https://justinzzc.github.io/aniAuto/](https://justinzzc.github.io/aniAuto/)
 
+##安装
+
+> bower install aniAuto
+
+
 ##用法
 
 ### 基本使用方法
