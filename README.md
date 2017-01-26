@@ -149,7 +149,7 @@ A jquery plugin based on animate.css
         console.log('zoomStart');
         },
         zoomEnd:function (){
-        console.log('zoomStart');
+        console.log('zoomEnd');
         }
     }
  });
@@ -160,7 +160,7 @@ A jquery plugin based on animate.css
     };
     
     window.zoomEnd=function (){
-        console.log('zoomStart');
+        console.log('zoomEnd');
     }
 ~~~
 
