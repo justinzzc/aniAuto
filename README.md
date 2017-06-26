@@ -60,7 +60,7 @@ A jquery plugin based on animate.css
  
 ### 初始隐藏 (attribute) ani-init-hide
 
-~~~ javascript
+~~~ html
 <div class="ani-auto  tada" ani-init-hide>
             hide
 </div>
@@ -73,7 +73,7 @@ A jquery plugin based on animate.css
  
 ### 延迟 (attribute) ani-delay
 
-~~~ javascript
+~~~ html
 <div class="ani-auto  tada" ani-delay="1s">
             delay
 </div>
@@ -84,7 +84,7 @@ A jquery plugin based on animate.css
 
 ### 持续时长 (attribute) ani-duration
 
-~~~ javascript
+~~~ html
 <div class="ani-auto  tada" ani-duration="1s">
             duration
 </div>
@@ -96,7 +96,7 @@ A jquery plugin based on animate.css
 
 ### 重复次数 (attribute) ani-iteration
 
-~~~ javascript
+~~~ html
 <div class="ani-auto  wobble" ani-iteration="5">
             iteration
 </div>
@@ -108,7 +108,7 @@ A jquery plugin based on animate.css
 
 ### 触发元素 (attribute) ani-trigger
 
-~~~ javascript
+~~~ html
 <div id="item_1" class="ani-auto  tada" >
  delay
 </div>
@@ -124,7 +124,7 @@ A jquery plugin based on animate.css
 
 ### 自动滚动 (attribute) ani-scroll  ani-scroll-offset
 
-~~~ javascript
+~~~ html
 <div class=" ani-auto  zoomIn"  ani-scroll ani-scroll-offset="-2%">
       <p>trigger scroll offset </p>
 </div>
