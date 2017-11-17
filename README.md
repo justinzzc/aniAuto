@@ -171,7 +171,7 @@ A jquery plugin based on animate.css
 
 ### 详细请查看 
 
-[demo页面](./demo/demo.html)
+[demo页面](https://justinzzc.github.io/aniAuto)
 
 
 ### 捐赠donate
