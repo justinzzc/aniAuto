@@ -1,0 +1,22 @@
+{
+  "name": "aniAuto",
+  "description": "ani-auto",
+  "main": "aniAuto.js",
+  "authors": [
+    "zzc"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "aniAuto",
+    "ani-auto",
+    "animate"
+  ],
+  "homepage": "https://github.com/justinzzc/autoAni",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

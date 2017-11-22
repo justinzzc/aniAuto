@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="css/animate.css">
 
     <script src="js/jquery-1.12.3.min.js"></script>
-    <script src="js/aniAuto.js"></script>
+    <script src="js/aniAuto.min.js"></script>
+
 
 </head>
 
 <body>
-<div class="slideInUp ">
+<div class="slideInUp animated">
 
     <h1 class="title ">Auto Ani Demo</h1>
 
@@ -23,29 +24,35 @@
                 delay
             </div>
 
-            <div id="item_2" class="ani-auto item flipInX" ani-trigger="#item_1">
+            <div id="item_2" class="ani-auto item flipInX"  ani-trigger="#item_1">
                 trigger
             </div>
-            <div id="item_3" class="ani-auto item swing" ani-duration="2s" ani-trigger="#item_2">
+
+            <div id="item_3" class="ani-auto item rotateIn" ani-duration="2s" ani-trigger="#item_2">
                 trigger duration
             </div>
-            <div id="item_4" class="ani-auto item swing" ani-delay="1s" ani-trigger="#item_3">
+
+            <div id="item_4" class="ani-auto item swing"  ani-delay="1s" ani-trigger="#item_3">
                 trigger delay
             </div>
-        </div>
 
-        <div class="demo">
-            <div id="item_5" class="ani-auto item  slideInDown" ani-scroll ani-trigger="#item_4">
-                trigger scroll
+            <div id="item_5" class="ani-auto item bounceIn" ani-init-hide ani-trigger="#item_4">
+                trigger hide
+            </div>
+
+            <div id="item_6" class="ani-auto item wobble" ani-iteration="3"  ani-trigger="#item_5">
+                trigger iteration
             </div>
         </div>
 
-        <div class="demo ani-auto " style="margin-top: 300px;" ani-scroll ani-scroll-offset="-2%" ani-delay="3s"
-             ani-trigger="#item_5">
-            <h2>Scroll To Me!</h2>
-
-            <div id="item_6" class=" item  pulse" >
-                <p>trigger delay scroll offset </p>
+        <div class="demo  "
+             style="margin-top: 100px;margin-bottom: 400px;">
+            <div id="item_7"
+                 class="item ani-auto zoomIn"
+                 ani-scroll
+                 ani-scroll-offset="-20"
+                 ani-trigger="#item_6">
+                <p>trigger scroll offset </p>
             </div>
         </div>
 
